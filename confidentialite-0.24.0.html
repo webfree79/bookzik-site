@@ -1,0 +1,68 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Politique de confidentialité — Bookzik</title><link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="style.css"></head><body><header><div class="wrap"><div class="top"><img src="assets/logo.png" alt="Logo Bookzik"><div class="brand">Bookzik</div><nav><a href="index.html">Accueil</a><a href="confidentialite.html">Confidentialité</a><a href="conditions.html">Conditions d’utilisation</a></nav></div></div></header><main><article class="article"><a class="back" href="index.html">← Retour à l’accueil</a>
+<h1>Politique de confidentialité</h1>
+<p class="meta">Mise à jour du 17 novembre 2026</p>
+<p>Cette page décrit le traitement des données personnelles lié au logiciel de bureau Bookzik et à ce site. Bookzik est développé et publié à titre personnel et non commercial par Webfree79. Contact : <a href="mailto:webfree79@gmail.com">webfree79@gmail.com</a>.</p>
+<div class="note"><strong>En bref :</strong> Bookzik fonctionne sur votre ordinateur. Il n’existe pas de serveur Bookzik : le développeur ne reçoit pas les données que vous saisissez. Les échanges avec les services que vous activez (Google Agenda, CalDAV, PandaDoc) se font directement entre votre ordinateur et ces services. Le développeur ne reçoit que les courriels que vous choisissez de lui envoyer.</div>
+
+<h2>1. Qui est responsable de quoi ?</h2>
+<p><strong>Données gérées dans Bookzik.</strong> Les informations que vous saisissez dans Bookzik (prestations, musiciens, organisateurs, documents…) restent sur votre ordinateur. Webfree79 n’y a pas accès et ne les traite pas. C’est vous, ou la structure pour laquelle vous agissez, qui décidez de leur utilisation et qui en êtes responsable ; il vous appartient de respecter les obligations applicables à vos propres traitements, notamment envers les personnes dont vous enregistrez les données.</p>
+<p><strong>Données reçues par Webfree79.</strong> Webfree79 est responsable du traitement des seules données que vous lui transmettez volontairement : courriels envoyés à l’adresse de contact et retours bêta envoyés par courriel (rubrique 7). Contact : <a href="mailto:webfree79@gmail.com">webfree79@gmail.com</a>.</p>
+
+<h2>2. Données conservées sur l’ordinateur</h2>
+<p>Les informations saisies et gérées dans Bookzik sont conservées dans une base de données locale sur l’ordinateur de l’utilisateur. Le développeur ne reçoit pas cette base et Bookzik ne la transmet pas à un serveur central.</p>
+<p>Les identifiants de connexion et jetons nécessaires aux intégrations sont protégés par chiffrement local ; la clé de chiffrement est conservée dans le trousseau ou le gestionnaire d’identifiants du système d’exploitation lorsqu’il est disponible, et à défaut dans un fichier du dossier de données de Bookzik, accessible au seul compte de l’utilisateur (protection moindre, signalée dans Bookzik).</p>
+
+<h2>3. Google Agenda</h2>
+<p>Si l’utilisateur active Google Agenda, Bookzik communique directement avec Google au moyen des autorisations accordées. Il peut publier les prestations dans les agendas choisis par l’utilisateur (l’agenda partagé du groupe et, s’il le souhaite, un agenda public affiché sur son site Internet), y compris un agenda appartenant à un autre compte et partagé avec le compte connecté avec le droit de modifier les événements. Dans ces agendas, il crée, modifie ou supprime uniquement les événements qu’il identifie comme ses propres événements ; il ne modifie jamais les autres événements. Il lit la liste des agendas pour permettre le choix de l’agenda et les événements nécessaires à la détection des indisponibilités et à la reprise des dates déjà saisies.</p>
+<p>L’agenda public ne reçoit qu’un contenu minimal, construit séparément : nom du groupe, date, mention « Option » ou « Privé » et, seulement pour une manifestation ouverte au public, la ville, puis, une fois le contrat validé, l’intitulé, la salle, l’horaire et un lien facultatif. Il ne reçoit jamais la composition de l’équipe, le gestionnaire, les coordonnées, les montants, les informations contractuelles ni les notes internes.</p>
+<p>Pour l’affichage des indisponibilités, Bookzik conserve localement une copie limitée des seuls événements qu’il reconnaît comme des indisponibilités ou des arrivées tardives, d’après des mots-clés tels que « indispo », « absent » ou « arrivée » : identifiant technique de l’événement, intitulé, dates et horaires, ainsi que les musiciens du groupe reconnus dans l’intitulé. Les autres événements lus ne sont pas conservés. Cette copie est remplacée lors de chaque actualisation et n’est pas transmise par Bookzik à un autre service. Elle est conservée dans la base locale et n’est pas chiffrée champ par champ ; sa protection dépend notamment de la sécurité du compte utilisateur et de l’ordinateur.</p>
+<p><strong>Déconnexion dans Bookzik.</strong> Le bouton « Déconnecter » (Paramètres › Agenda partagé) efface de l’ordinateur la connexion Google enregistrée pour le groupe ainsi que la copie locale des indisponibilités de ce groupe. Les identifiants du client Google importés (fichier JSON) restent enregistrés, chiffrés, pour permettre une reconnexion. Les prestations, les autres données du groupe et les événements déjà publiés dans l’agenda Google ne sont pas supprimés. Le choix de l’agenda est conservé : après une nouvelle connexion, la copie des indisponibilités est reconstituée à la synchronisation suivante. La copie est également effacée si l’utilisateur désactive la lecture des indisponibilités, change l’agenda lu ou change de type d’agenda.</p>
+<p><strong>Révocation de l’accès chez Google.</strong> La déconnexion dans Bookzik ne retire pas l’autorisation accordée à Bookzik dans le compte Google. Pour la retirer, l’utilisateur se rend dans son compte Google, rubrique Sécurité › Applications et services tiers, et supprime l’accès de Bookzik. Les deux opérations peuvent être faites indépendamment l’une de l’autre.</p>
+<p>L’utilisation et le transfert à toute autre application des informations reçues des API Google respectent les <a href="https://developers.google.com/terms/api-services-user-data-policy">Règles relatives aux données utilisateur des services d’API Google</a>, y compris les exigences d’utilisation limitée.</p>
+
+<h2>4. Calendriers CalDAV</h2>
+<p>Si l’utilisateur configure un calendrier CalDAV, Bookzik communique directement avec le serveur choisi par le groupe (par exemple Infomaniak ou Nextcloud). L’adresse du serveur et l’identifiant sont enregistrés localement ; le mot de passe est chiffré localement. Bookzik conserve la même copie limitée des indisponibilités que pour Google Agenda, dans les mêmes conditions.</p>
+<p>Le bouton « Déconnecter » efface le mot de passe enregistré et la copie locale des indisponibilités du groupe. L’adresse du serveur, l’identifiant et le choix de l’agenda sont conservés pour faciliter une reconnexion. Les prestations, les autres données du groupe et les événements déjà publiés sur le serveur ne sont pas supprimés.</p>
+
+<h2>5. PandaDoc</h2>
+<p>L’intégration PandaDoc est facultative. Lorsque l’utilisateur déclenche l’envoi depuis Bookzik, l’application communique directement avec l’API PandaDoc au moyen de la clé API fournie par l’utilisateur et conservée chiffrée localement. Les informations transmises comprennent le document à signer ainsi que le nom et l’adresse électronique des signataires.</p>
+
+<h2>6. Liens vers des services externes</h2>
+<p>Bookzik peut ouvrir dans le navigateur des pages de services tels que le GUSO, Gmail ou Outlook en ligne. L’ouverture d’une page dans le navigateur ne signifie pas que Bookzik lui transmet lui-même des données.</p>
+
+<h2>7. Données reçues par Webfree79 : contact et retours bêta</h2>
+<p><strong>Données concernées.</strong> Adresse électronique de l’expéditeur, nom ou pseudonyme indiqué, contenu du message. Pour les retours bêta : les réponses saisies dans le formulaire « Retours bêta » de Bookzik (nom ou pseudonyme, formation musicale, système, fréquence d’utilisation, version de Bookzik, appréciations et descriptions) et les captures d’écran que le testeur choisit de joindre. Bookzik n’envoie jamais ces retours automatiquement : il prépare un courriel que l’utilisateur vérifie et envoie lui-même depuis sa messagerie. Il est recommandé de ne joindre aucune capture montrant des données personnelles de tiers.</p>
+<p><strong>Finalités.</strong> Répondre aux messages, corriger les erreurs signalées et améliorer Bookzik.</p>
+<p><strong>Base légale.</strong> L’intérêt légitime de Webfree79 à répondre aux personnes qui le contactent et à améliorer le logiciel (article 6, paragraphe 1, point f, du RGPD).</p>
+<p><strong>Destinataires.</strong> Ces données ne sont lues que par Webfree79 et ne sont ni vendues ni cédées. La messagerie utilisée est un compte Gmail : Google héberge donc ces courriels et peut les traiter, y compris hors de l’Union européenne, selon ses propres règles de confidentialité.</p>
+<p><strong>Durée de conservation.</strong> Les courriels de contact sont conservés le temps nécessaire au traitement de la demande. Les retours bêta sont conservés pendant la phase bêta et le temps nécessaire à la correction des points signalés, puis supprimés.</p>
+
+<h2>8. Ce site</h2>
+<p>Ce site ne dépose pas de cookie, n’utilise aucun outil de mesure d’audience et ne contient aucun formulaire. Il est hébergé par GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis). GitHub enregistre l’adresse IP des visiteurs à des fins de sécurité, selon sa propre <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité</a> ; Webfree79 n’a pas accès à ces journaux.</p>
+
+<h2>9. Absence de publicité et de suivi</h2>
+<p>Bookzik n’intègre pas de publicité ni de statistiques d’utilisation. Il ne transmet pas les données à des fins d’entraînement d’intelligence artificielle et ne dispose pas d’un serveur Bookzik de collecte ou de centralisation. Le logiciel ne réalise pas de mise à jour automatique.</p>
+
+<h2>10. Sécurité et sauvegardes</h2>
+<p>Les secrets d’intégration (notamment mots de passe, jetons et clé API PandaDoc) sont chiffrés localement. Certaines données opérationnelles, dont la copie limitée d’événements de calendrier, ne sont pas chiffrées individuellement dans la base. L’utilisateur doit protéger l’accès à son ordinateur et prévoir des sauvegardes adaptées.</p>
+
+<h2>11. Services tiers</h2>
+<p>Lorsque l’utilisateur active Google Agenda, CalDAV ou PandaDoc, les données nécessaires à la fonction concernée sont traitées par le fournisseur correspondant, selon ses propres conditions et sa politique de confidentialité.</p>
+
+<h2>12. Conservation et suppression des données</h2>
+<p>Bookzik ne fixe pas de durée de conservation : les données restent sur l’ordinateur de l’utilisateur tant qu’il ne les supprime pas. Les moyens de suppression disponibles sont les suivants :</p>
+<ul>
+<li>dans Bookzik, supprimer une prestation, un document, un échange ou un modèle de document ;</li>
+<li>dans Bookzik, déconnecter un agenda (Paramètres › Agenda partagé), avec les effets décrits aux rubriques 3 et 4 ;</li>
+<li>pour tout effacer, supprimer le dossier de données de Bookzik : <code>%APPDATA%\Bookzik</code> sous Windows, <code>~/.local/share/bookzik</code> sous Linux. La désinstallation du logiciel ne supprime pas ce dossier. Les sauvegardes et documents enregistrés dans d’autres dossiers choisis par l’utilisateur sont à supprimer séparément, ainsi que l’entrée « fr.bookzik.app » du gestionnaire d’identifiants du système.</li>
+</ul>
+<p>Les données transmises à Google, à un serveur CalDAV ou à PandaDoc (par exemple les événements publiés ou les documents envoyés en signature) sont conservées par ces services selon leurs propres règles ; elles se suppriment depuis ces services. Pour les données reçues par Webfree79, voir la rubrique 7.</p>
+
+<h2>13. Vos droits</h2>
+<p>Pour les données reçues par Webfree79 (rubrique 7), vous disposez, dans les conditions prévues par le RGPD, d’un droit d’accès, de rectification, d’effacement et de limitation, ainsi que d’un droit d’opposition au traitement. Pour les exercer, écrivez à <a href="mailto:webfree79@gmail.com">webfree79@gmail.com</a>. Une réponse vous sera apportée dans un délai d’un mois. En cas de doute raisonnable sur votre identité, des informations complémentaires pourront vous être demandées.</p>
+<p>Pour les données vous concernant enregistrées dans Bookzik par un groupe ou une structure (par exemple en tant que musicien ou organisateur), adressez-vous à ce groupe ou à cette structure : Webfree79 n’a pas accès à ces données.</p>
+<p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission nationale de l’informatique et des libertés (CNIL) : <a href="https://www.cnil.fr">www.cnil.fr</a>.</p>
+
+<h2>14. Contact et mises à jour</h2>
+<p>Pour toute question : <a href="mailto:webfree79@gmail.com">webfree79@gmail.com</a>. Cette page pourra être mise à jour si les fonctionnalités ou pratiques évoluent ; la date de mise à jour figure en haut de page.</p>
+</article></main><footer><div class="wrap footerrow"><span>Bookzik · Webfree79</span><span><a href="index.html">Accueil</a> · <a href="conditions.html">Conditions d’utilisation</a> · <a href="mailto:webfree79@gmail.com">Contact</a></span></div></footer></body></html>
