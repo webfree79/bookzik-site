@@ -1,10 +1,176 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Bookzik, logiciel libre de gestion administrative et organisationnelle des formations musicales."><title>Bookzik — Moins de papiers, plus de musique</title><link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="wrap"><div class="top"><img src="assets/logo.png" alt="Logo Bookzik"><div class="brand">Bookzik</div><nav><a href="index.html">Accueil</a><a href="confidentialite.html">Confidentialité</a><a href="conditions.html">Conditions d’utilisation</a></nav></div>
-<section class="hero"><div class="eyebrow">Logiciel libre · GPL-3.0</div><h1>Moins de papiers, plus de musique.</h1><p>Bookzik est un logiciel de bureau destiné aux responsables et mandataires de formations musicales, pour la gestion administrative des prestations ainsi que la gestion et la communication avec l’ensemble du groupe ou de l’orchestre, en emploi direct dans le cadre du GUSO.</p><span class="pill">Windows</span><span class="pill">Linux</span><span class="pill">Gratuit et libre</span></section></div></header>
-<main><div class="wrap"><div class="grid">
-<section class="card"><h2>Les prestations au même endroit</h2><p>Suivez les demandes, options et confirmations de prestations, les informations des organisateurs et les éléments utiles à la préparation des contrats.</p></section>
-<section class="card"><h2>Les équipes et les documents</h2><p>Organisez les formations et les équipes, préparez les documents administratifs et centralisez les informations nécessaires à la gestion des prestations.</p></section>
-<section class="card"><h2>Un agenda partagé</h2><p>Bookzik peut synchroniser les prestations avec Google Agenda ou un calendrier compatible CalDAV, selon la configuration choisie par l’utilisateur.</p></section>
-<section class="card"><h2>Conçu pour rester local</h2><p>Les données de gestion sont conservées sur l’ordinateur de l’utilisateur. Bookzik communique directement avec les services externes que l’utilisateur choisit d’activer.</p></section></div>
-<section class="article" style="margin-top:22px"><h2>Un logiciel indépendant et libre</h2><p>Bookzik est développé à titre personnel par <strong>Webfree79</strong>. Le logiciel est proposé gratuitement sous licence <strong>GNU GPL version 3</strong>. Il n’y a ni abonnement, ni publicité, ni fonctionnalité réservée à des contributeurs.</p><p>Le projet s’adresse principalement aux acteurs du spectacle vivant qui gèrent des formations musicales et leurs démarches administratives. Bookzik est un outil d’aide à l’organisation : il ne remplace pas les conseils des organismes compétents ni les vérifications réglementaires nécessaires.</p><div class="note"><strong>Contact :</strong> <a href="mailto:webfree79@gmail.com">webfree79@gmail.com</a> — retours bêta, questions et signalement de problèmes.</div><p class="meta">Développé par Webfree79 · Logiciel libre sous licence GPL-3.0.</p></section></div></main>
-<footer><div class="wrap footerrow"><span>© Bookzik — Projet indépendant développé par Webfree79</span><span><a href="confidentialite.html">Confidentialité</a> · <a href="conditions.html">Conditions d’utilisation</a> · <a href="mailto:webfree79@gmail.com">Contact</a></span></div></footer></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Bookzik, un logiciel libre et gratuit pour aider les responsables de groupes et d’orchestres à organiser leurs prestations, leurs équipes et leurs démarches administratives.">
+  <title>Bookzik — Moins de papiers, plus de musique</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .home-hero { padding: clamp(2.5rem, 7vw, 5.5rem) 0 3.5rem; }
+    .home-hero-inner { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr); gap:2.5rem; align-items:center; }
+    .home-kicker { display:inline-block; margin-bottom:1rem; font-size:.82rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; opacity:.78; }
+    .home-hero h1 { font-size:clamp(2.3rem,5vw,4.1rem); line-height:1.06; margin:.2rem 0 1.2rem; max-width:13ch; }
+    .home-lead { font-size:clamp(1.08rem,2vw,1.3rem); line-height:1.6; max-width:58ch; }
+    .home-tagline { font-size:1.05rem; font-weight:700; margin-top:1.5rem; }
+    .home-logo { display:flex; justify-content:center; align-items:center; padding:1.5rem; }
+    .home-logo img { width:min(100%,280px); height:auto; object-fit:contain; }
+    .home-section { padding:2.6rem 0; }
+    .home-section h2 { font-size:clamp(1.55rem,3vw,2.1rem); margin:0 0 .8rem; }
+    .home-intro { max-width:75ch; line-height:1.7; }
+    .home-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:1.6rem; }
+    .home-card { border:1px solid var(--border, #dedede); border-radius:14px; padding:1.25rem; background:var(--card, transparent); }
+    .home-card h3 { margin:.1rem 0 .55rem; font-size:1.08rem; }
+    .home-card p { margin:.35rem 0 0; line-height:1.6; }
+    .home-number { font-size:.8rem; font-weight:800; letter-spacing:.08em; opacity:.7; }
+    .home-band { margin:1rem 0; padding:1.5rem; border-radius:14px; background:var(--note-bg, rgba(128,128,128,.10)); }
+    .home-band p { margin:.4rem 0; line-height:1.65; }
+    .home-pillrow { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem; }
+    .home-pill { display:inline-block; border:1px solid var(--border, #ccc); border-radius:999px; padding:.35rem .75rem; font-size:.88rem; }
+    .home-cta { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.5rem; }
+    .home-cta a { display:inline-block; padding:.75rem 1.05rem; border-radius:9px; text-decoration:none; font-weight:700; border:1px solid currentColor; }
+    .home-cta a.primary { background:var(--accent, #e87528); color:white; border-color:var(--accent, #e87528); }
+    .home-small { font-size:.92rem; opacity:.82; line-height:1.6; }
+    @media (max-width:760px) {
+      .home-hero-inner { grid-template-columns:1fr; gap:1rem; }
+      .home-logo { justify-content:flex-start; padding:.5rem 0; }
+      .home-logo img { width:130px; }
+      .home-grid { grid-template-columns:1fr; }
+      .home-hero { padding-top:2.5rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="assets/logo.png" alt="Logo Bookzik">
+      <div class="brand">Bookzik</div>
+      <nav>
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="conditions.html">Conditions d’utilisation</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="home-hero">
+      <div class="home-hero-inner">
+        <div>
+          <span class="home-kicker">Logiciel libre et gratuit · Windows et Linux</span>
+          <h1>Moins de papiers, plus de musique.</h1>
+          <p class="home-lead">Bookzik aide les responsables de groupes et d’orchestres à organiser leurs prestations, leurs équipes et toutes les démarches qui vont avec — du premier contact jusqu’au suivi après le concert.</p>
+          <p class="home-tagline">Un outil né du terrain, pensé pour celles et ceux qui font vivre la musique.</p>
+          <div class="home-cta">
+            <a class="primary" href="#pourquoi">Découvrir Bookzik</a>
+            <a href="mailto:webfree79@gmail.com">Contacter le développeur</a>
+          </div>
+        </div>
+        <div class="home-logo">
+          <img src="assets/logo.png" alt="Bookzik">
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section" id="pourquoi">
+      <h2>Pourquoi Bookzik est né</h2>
+      <div class="home-intro">
+        <p>Gérer un groupe, ce n’est pas seulement trouver des dates et monter sur scène. C’est aussi répondre aux organisateurs, tenir les options, composer les équipes, gérer les remplacements, préparer les contrats, rassembler les renseignements des employeurs, suivre les rémunérations et ne rien oublier dans les agendas.</p>
+        <p>Au fil des prestations, ces informations finissent souvent dispersées entre des tableurs, des documents, des courriels, des agendas et des dossiers. Les ressaisies prennent du temps, les oublis sont faciles et l’administratif peut finir par prendre trop de place.</p>
+        <p><strong>Bookzik est né de ce besoin concret :</strong> réunir ces tâches dans un seul outil cohérent, conçu à partir de situations réellement rencontrées par les groupes et leurs responsables. Pas pour remplacer le travail des musiciens, mais pour simplifier tout ce qui l’entoure.</p>
+      </div>
+    </section>
+
+    <section class="home-section" id="experience">
+      <h2>Un logiciel né de l’expérience du terrain</h2>
+      <div class="home-intro">
+        <p>Bookzik est conçu par un musicien professionnel qui exerce ce métier depuis plus de 30 ans et accompagne des groupes et des orchestres comme mandataire depuis une vingtaine d’années.</p>
+        <p>Il prend également part, depuis de nombreuses années, aux travaux des instances qui représentent et défendent les professionnels du spectacle vivant.</p>
+        <p>Cette double expérience, artistique et organisationnelle, nourrit directement la conception de Bookzik : un outil imaginé par quelqu’un qui connaît les réalités du métier, les contraintes des employeurs, les responsabilités des mandataires et les besoins des musiciens.</p>
+      </div>
+    </section>
+
+    <section class="home-section" id="fonctionnalites">
+      <h2>Du premier contact au suivi de la prestation</h2>
+      <p class="home-intro">Bookzik rassemble les informations utiles au même endroit et évite de recommencer plusieurs fois le même travail.</p>
+      <div class="home-grid">
+        <article class="home-card">
+          <span class="home-number">01 · ORGANISER</span>
+          <h3>Prestations et calendrier</h3>
+          <p>Suivez les demandes, options et dates confirmées. Retrouvez les organisateurs, les lieux, les horaires et l’historique de chaque prestation.</p>
+        </article>
+        <article class="home-card">
+          <span class="home-number">02 · CONSTITUER</span>
+          <h3>Équipes et remplacements</h3>
+          <p>Gérez les musiciens, les équipes habituelles, les disponibilités, les absences, les remplaçants et les renforts selon la formation prévue.</p>
+        </article>
+        <article class="home-card">
+          <span class="home-number">03 · PRÉPARER</span>
+          <h3>Contrats et documents</h3>
+          <p>Utilisez vos propres modèles pour préparer propositions d’embauche, contrats et avenants, puis produire les documents PDF.</p>
+        </article>
+        <article class="home-card">
+          <span class="home-number">04 · SUIVRE</span>
+          <h3>Rémunérations et GUSO</h3>
+          <p>Centralisez les rémunérations convenues et obtenez des estimations utiles à la préparation des démarches. Les montants doivent être vérifiés avec le simulateur officiel du GUSO.</p>
+        </article>
+        <article class="home-card">
+          <span class="home-number">05 · PARTAGER</span>
+          <h3>Agendas du groupe et du site</h3>
+          <p>Publiez les informations utiles dans un agenda partagé Google ou CalDAV, et gérez séparément les événements destinés à l’agenda public du site.</p>
+        </article>
+        <article class="home-card">
+          <span class="home-number">06 · TRANSMETTRE</span>
+          <h3>E-mails et signature</h3>
+          <p>Préparez vos messages depuis Bookzik et, si vous le souhaitez, utilisez l’intégration PandaDoc pour faire signer les documents électroniquement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <h2>Un logiciel qui vous laisse la maîtrise</h2>
+      <div class="home-band">
+        <p><strong>Bookzik fonctionne localement sur votre ordinateur.</strong> Vos prestations, vos contacts, vos documents et les informations de votre groupe restent dans votre installation. Il n’existe pas de serveur Bookzik qui collecte ou centralise vos données.</p>
+        <p>Les connexions à Google Agenda, aux calendriers CalDAV ou à PandaDoc sont facultatives et ne sont utilisées que lorsque vous activez les fonctions correspondantes. Les actions importantes restent sous votre contrôle.</p>
+        <div class="home-pillrow">
+          <span class="home-pill">Local-first</span>
+          <span class="home-pill">Pas de compte Bookzik</span>
+          <span class="home-pill">Pas d’abonnement</span>
+          <span class="home-pill">Pas de publicité</span>
+          <span class="home-pill">Données chez vous</span>
+        </div>
+      </div>
+      <p class="home-small">La synchronisation multi-appareils et l’application mobile dédiée sont des pistes à l’étude, pas des fonctions actuellement disponibles. Bookzik reste pleinement utilisable en local, sans connexion à un service cloud.</p>
+    </section>
+
+    <section class="home-section">
+      <h2>Pour qui ?</h2>
+      <p class="home-intro">Bookzik s’adresse aux responsables de groupes, orchestres et formations musicales qui organisent eux-mêmes leurs prestations et leurs démarches administratives. Il peut aussi convenir aux artistes qui assurent le suivi de plusieurs formations.</p>
+      <p class="home-intro">Il est particulièrement utile lorsque les prestations impliquent plusieurs musiciens, des équipes variables, des contrats de travail et les formalités liées à l’emploi occasionnel dans le spectacle vivant.</p>
+    </section>
+
+    <section class="home-section">
+      <h2>Un projet indépendant, construit progressivement</h2>
+      <p class="home-intro">Bookzik est développé indépendamment, à partir de besoins concrets et avec une attention particulière portée à la simplicité, à la fiabilité et à la confidentialité. Le logiciel est libre et gratuit. Il évolue progressivement, au fil des tests et des retours de ses utilisateurs.</p>
+      <p class="home-intro">Bookzik n’est ni une plateforme de réservation commerciale, ni un service de facturation : il aide à organiser le travail des groupes et les démarches liées à l’engagement des artistes.</p>
+      <div class="home-cta">
+        <a class="primary" href="mailto:webfree79@gmail.com">Écrire à Webfree79</a>
+        <a href="confidentialite.html">Lire la politique de confidentialité</a>
+        <a href="conditions.html">Consulter les conditions d’utilisation</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footerrow">
+    <span>Bookzik · Webfree79</span>
+    <span><a href="confidentialite.html">Confidentialité</a> · <a href="conditions.html">Conditions d’utilisation</a> · <a href="mailto:webfree79@gmail.com">Contact</a></span>
+  </div>
+</footer>
+</body>
+</html>
